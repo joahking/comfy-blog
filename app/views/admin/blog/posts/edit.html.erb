@@ -1,5 +1,7 @@
-<h1>Editing <%= @post.title.titleize %></h1>
+<div class="page-header">
+  <h2>Editing <%= @post.title.titleize %></h2>
+</div>
 
-<%= comfy_blog_form_for @post, :as => :post, :url => {:action => :update} do |form| %>
+<%= comfy_blog_form_for @post, :as => :post, :url => {:action => :update}, :html => {:class => "formatted form-horizontal"} do |form| %>
   <%= render :partial => form %>
 <% end %>

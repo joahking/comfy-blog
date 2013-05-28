@@ -1,5 +1,7 @@
-<h1>New Blog Post</h1>
+<div class="page-header">
+  <h2>New Blog Post</h2>
+</div>
 
-<%= comfy_blog_form_for @post, :as => :post, :url => {:action => :create} do |form| %>
+<%= comfy_blog_form_for @post, :as => :post, :url => {:action => :create}, :html => {:class => "formatted form-horizontal"} do |form| %>
   <%= render :partial => form %>
 <% end %>

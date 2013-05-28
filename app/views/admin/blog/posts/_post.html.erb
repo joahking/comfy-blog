@@ -1,16 +1,16 @@
 <li>
   <div class='item'>
     <div class='icon <%= post.is_published?? 'published' : 'draft' %>'></div>
-    <div class='action_links'>
+    <div class='btn-group'>
       <% unless ComfyBlog.disqus_enabled? %>
-        <%= link_to pluralize(post.comments.count, 'comment'), admin_blog_post_comments_path(post) %>
+        <%= link_to pluralize(post.comments.count, 'comment'), admin_blog_post_comments_path(post), :class => "btn btn-small" %>
       <% end %>
-      <%= link_to 'Edit', edit_admin_blog_post_path(post) %>
-      <%= link_to 'Delete', admin_blog_post_path(post), :method => :delete, :confirm => 'Are you sure?' %>
+      <%= link_to 'Edit', edit_admin_blog_post_path(post), :class => "btn btn-small" %>
+      <%= link_to 'Delete', admin_blog_post_path(post), :method => :delete, :confirm => 'Are you sure?', :class => "btn btn-small btn-danger" %>
     </div>
-    <div class='label'>
+    <div class='item-content'>
       <%= link_to post.title.titleize, edit_admin_blog_post_path(post) %>
-      <div class='sublabel'>
+      <div class='item-meta'>
         Published <%= time_ago_in_words(post.created_at) %> ago
         
         <% if post.author.present? %>

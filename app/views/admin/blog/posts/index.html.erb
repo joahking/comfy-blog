@@ -1,6 +1,7 @@
-<%= link_to 'Add new blog post', new_admin_blog_post_path, :class => 'big button' %>
-
-<h1>Blog Posts</h1>
+<div class="page-header">
+  <%= link_to 'Add new blog post', new_admin_blog_post_path, :class => 'btn pull-right' %>
+  <h2>Blog Posts</h2>
+</div>
 
 <ul class='list posts'>
   <% @posts.each do |post| %>

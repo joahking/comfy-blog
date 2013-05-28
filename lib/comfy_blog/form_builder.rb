@@ -23,26 +23,28 @@ class ComfyBlog::FormBuilder < ActionView::Helpers::FormBuilder
       desc = "<div class='desc'>#{desc}</div>"
     end
     %(
-      <div class='form_element #{type}_element #{'errors' if errors}'>
-        <div class='label'>#{label_for(field, options)}</div>
-        <div class='value'>#{yield}</div>
+      <div class='control-group #{'error' if errors}'>
+        #{label_for(field, options)}
+        <div class='controls'>
+          #{yield}
+          <div class="help-inline">#{errors}</div>
+        </div>
         #{desc}
-        #{errors}
       </div>
     ).html_safe
   end
   
   def label_for(field, options)
     label = options.delete(:label) || field.to_s.titleize.capitalize
-    "<label for=\"#{object_name}_#{field}\">#{label}</label>".html_safe
+    "<label for=\"#{object_name}_#{field}\" class='control-label'>#{label}</label>".html_safe
   end
   
   def simple_field(label = nil, content = nil, options = {}, &block)
     content ||= @template.capture(&block) if block_given?
     %(
-      <div class='form_element #{options.delete(:class)}'>
-        <div class='label'>#{label}</div>
-        <div class='value'>#{content}</div>
+      <div class='control-group #{options.delete(:class)}'>
+        #{label}
+        <div class='controls'>#{content}</div>
       </div>
     ).html_safe
   end
