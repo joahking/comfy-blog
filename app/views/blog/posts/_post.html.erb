@@ -3,6 +3,6 @@
   <div class='author'><%= post.author %></div>
   <div class='date'><%= post.created_at %></div>
   <div class='content'>
-    <%= post.content.html_safe %>
+    <%= @post ? post.content.html_safe : post.excerpt.html_safe %>
   </div>
 </div>
