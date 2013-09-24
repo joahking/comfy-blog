@@ -34,6 +34,7 @@ es:
     update_tag: Actualizar etiqueta
     edit_tag: "Editando etiqueta %{tag}"
     confirm_tag_delete: 'Está seguro de que quiere eliminar esta etiqueta?'
+    tag_names_hint: 'Separadas por comas, e.g. bio, health'
 
     category: 'Categoría'
     categories: 'Categorías'

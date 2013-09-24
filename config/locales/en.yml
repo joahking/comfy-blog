@@ -49,6 +49,7 @@ en:
     tag_update_failed: Failed to update Blog Tag
     tag_removed: Blog Tag removed
     tag_not_found: Blog Tag not found
+    tag_names_hint: 'Comma separated, e.g. bio, health'
 
     comment: comment
     comments: Comments

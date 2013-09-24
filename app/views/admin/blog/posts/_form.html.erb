@@ -13,6 +13,7 @@
   <% end %>
 <% end %>
 <%= form.text_field :tag_names, :label => link_to(t('comfy_blog.tags'), admin_blog_tags_path) %>
+<p class="help"><%= t 'comfy_blog.tag_names_hint' %></p>
 <%= form.text_area :excerpt, :data => { :rich_text => true }, :class => 'short' %>
 <%= form.text_area :content, :data => { :rich_text => true } %>
 <%= form.text_field :published_at, :class => 'datetime' %>
