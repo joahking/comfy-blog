@@ -15,9 +15,5 @@ module Blog::ApplicationHelper
       send("dated_blog_post_#{type}", post.year, ("%02d" % post.month), post.slug)
     end
   end
-  
-  def blah
-    'blah'
-  end
-  
+
 end
