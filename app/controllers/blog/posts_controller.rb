@@ -35,7 +35,11 @@ class Blog::PostsController < ApplicationController
       end
     end
   end
-  
+
+  def archive
+    @posts = Blog::Post.published
+  end
+
   def show
     @post = if params[:slug] && params[:year] && params[:month]
       Blog::Post.published.find_by_year_and_month_and_slug!(params[:year], params[:month], params[:slug])

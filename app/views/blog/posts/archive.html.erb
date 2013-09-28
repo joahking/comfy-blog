@@ -1,0 +1,19 @@
+<h1><%= t 'comfy_blog.archive' %></h1>
+
+<ul id="archive">
+  <% @posts.each do |post| %>
+    <li>
+      <span class="date"><%= post.published_at.to_date.to_s(:db) %></span>
+      <%= link_to post.title, blog_post_url(post) %>
+      <%= t 'comfy_blog.by' %>
+      <%= "#{post.author}." %>
+
+      <span class="tags">
+        <%= t :tags %>
+        <% post.tags.each do |tag| %>
+          <%= link_to tag.name, tag_or_category_posts_url(tag) %>
+        <% end %>
+      </span>
+    </li>
+  <% end %>
+</ul>

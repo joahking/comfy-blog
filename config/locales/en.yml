@@ -57,6 +57,8 @@ en:
 
     comment_created: Comment created
 
+    archive: Blog archive
+
   activerecord:
     attributes:
       "blog/post":
