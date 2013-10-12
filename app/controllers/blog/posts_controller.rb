@@ -15,7 +15,7 @@ class Blog::PostsController < ApplicationController
     else
       Blog::Post.published
     end
-    
+
     respond_to do |f|
       f.html do
         @posts = if defined? WillPaginate
@@ -38,6 +38,14 @@ class Blog::PostsController < ApplicationController
 
   def archive
     @posts = Blog::Post.published
+
+    respond_to do |f|
+      f.html do
+        if ComfyBlog.config.public_cms_layout
+          render :cms_layout => ComfyBlog.config.public_cms_layout
+        end
+      end
+    end
   end
 
   def show
