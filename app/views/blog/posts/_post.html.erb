@@ -1,5 +1,5 @@
 <div class='post'>
-  <h1><%= @post ? post.title : link_to(post.title, blog_post_path(post))%></h1>
+  <h1><%= @post ? @post.title : link_to(post.title, blog_post_path(post))%></h1>
   <div class='author'><%= post.author %></div>
   <div class='date'><%= post.published_at %></div>
   <div class='content'>
