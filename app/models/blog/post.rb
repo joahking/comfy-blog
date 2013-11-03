@@ -1,6 +1,6 @@
 class Blog::Post < ActiveRecord::Base
 
-  attr_accessible :title, :slug, :author, :tag_names, :excerpt, :content, :published_at, :is_published, :category_ids
+  attr_accessible :title, :slug, :author, :tag_names, :excerpt, :content, :published_at, :is_published, :category_ids, :image_id
 
   self.table_name = :blog_posts
 
@@ -12,9 +12,11 @@ class Blog::Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
-  
+
+  belongs_to :image, :class_name => Cms::File
+
   # -- Validations ----------------------------------------------------------
-  validates :title, :slug, :year, :month, :content,
+  validates :title, :slug, :year, :month, :content, :image,
     :presence   => true
   validates :slug,
     :uniqueness => { :scope => [:year, :month] }

@@ -14,6 +14,12 @@
 <% end %>
 <%= form.text_field :tag_names, :label => link_to(t('comfy_blog.tags'), admin_blog_tags_path) %>
 <p class="help"><%= t 'comfy_blog.tag_names_hint' %></p>
+
+<%= form.select :image_id, Cms::File.all.map { |i| [i.file_file_name, i.id] } %>
+<div class="thumb">
+  <%= image_tag @post.image.file.url(:blog_thumb) if @post.image%>
+</div>
+
 <%= form.text_area :excerpt, :data => { :rich_text => true }, :class => 'short' %>
 <%= form.text_area :content, :data => { :rich_text => true } %>
 <%= form.text_field :published_at, :class => 'datetime' %>

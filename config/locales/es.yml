@@ -66,6 +66,7 @@ es:
         content: Contenido
         published_at: "Fecha de publicación"
         is_published: Publicado
+        image_id: Imagen de portada
       "blog/tag":
         name: Etiqueta
         is_category: 'Es una categoría'

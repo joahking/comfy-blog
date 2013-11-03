@@ -69,6 +69,7 @@ en:
         content: Content
         published_at: Published at
         is_published: Is published
+        image_id: Image
       "blog/tag":
         name: Name
         is_category: Is category
