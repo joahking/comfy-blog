@@ -26,7 +26,7 @@ es:
     post_update_failed: Error al actualizar Entrada en Blog
     post_removed: Entrada en Blog eliminada
     post_not_found: Entrada en Blog no encontrada
-    post_published_at_hint: Formato es dd-mm-aaaa, e.g. 17-11-2013
+    post_published_at_hint: Formato es dd-mm-aaaa hh:mm:ss, e.g. 17-11-2013 12:00
 
     tagged_with: 'Etiquetas:'
     new_tag: Crear nueva etiqueta

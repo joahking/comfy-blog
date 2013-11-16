@@ -29,7 +29,7 @@ en:
     post_update_failed: Failed to update Blog Post
     post_removed: Blog Post removed
     post_not_found: Blog Post not found
-    post_published_at_hint: Format is dd-mm-yyyy, e.g. 17-11-2013
+    post_published_at_hint: Format is dd-mm-yyyy hh:mm:ss, e.g. 17-11-2013 12:00
 
     tagged_with: 'Tagged with:'
     new_tag: Add new blog tag
