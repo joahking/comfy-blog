@@ -2,16 +2,19 @@
 <%= form.text_field :slug, :id => 'slug', :data => {:slug => true} %>
 <%= form.text_field :author %>
 <% if Blog::Tag.categories.present? %>
+  <fieldset style="border:1px solid #CCCCCC !important; padding:5px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; -moz-box-sizing: border-box; outline: medium none; border-radius: 4px 4px 4px 4px;">
   <%= form.simple_field t('comfy_blog.categories') do %>
     <% Blog::Tag.categories.each do |category| %>
       <%= hidden_field_tag "post[category_ids][#{category.id}]", 0, :id => nil %>
-      <label>
-        <%= check_box_tag "post[category_ids][#{category.id}]", 1, @post.category_ids[category.id.to_s].to_i == 1, :id => nil %>
+      <label for="category_<%= category.id %>" style='display:inline; margin-right:0.5em;'>
+        <%= check_box_tag "post[category_ids][#{category.id}]", 1, @post.category_ids[category.id.to_s].to_i == 1, :id => "category_#{category.id}" %>
         <%= category.name %>
       </label>
     <% end %>
   <% end %>
+  </fieldset>
 <% end %>
+<br/>
 <%= form.text_field :tag_names, :label => link_to(t('comfy_blog.tags'), admin_blog_tags_path) %>
 <p class="help"><%= t 'comfy_blog.tag_names_hint' %></p>
 
