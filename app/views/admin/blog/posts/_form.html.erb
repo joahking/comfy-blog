@@ -25,7 +25,7 @@
 
 <%= form.text_area :excerpt, :data => { :rich_text => true }, :class => 'short' %>
 <%= form.text_area :content, :data => { :rich_text => true } %>
-<%= form.text_field :published_at, :class => 'datetime' %>
+<%= form.text_field :published_at, :class => 'datetime', :data => { :datetime => true } %>
 <p class="help"><%= t 'comfy_blog.post_published_at_hint' %></p>
 
 <% if defined?(ComfortableMexicanSofa) %>
