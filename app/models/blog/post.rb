@@ -16,7 +16,7 @@ class Blog::Post < ActiveRecord::Base
   belongs_to :image, :class_name => Cms::File
 
   # -- Validations ----------------------------------------------------------
-  validates :title, :slug, :year, :month, :content, :image,
+  validates :title, :slug, :year, :month, :content,
     :presence   => true
   validates :slug,
     :uniqueness => { :scope => [:year, :month] }
