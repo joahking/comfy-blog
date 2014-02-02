@@ -5,6 +5,9 @@ class Blog::PostsController < ApplicationController
   end
 
   def index
+    #HACK content_for :title, 'content' reach the application layout empty!? no idea why
+    @content_for_title = 'Blog - ifeel maps'
+
     scope = if params[:tag]
       Blog::Post.published.tagged_with(params[:tag])
     elsif params[:category]
@@ -37,6 +40,8 @@ class Blog::PostsController < ApplicationController
   end
 
   def archive
+    @content_for_title = 'Todas las noticias - Blog de ifeel maps'
+
     @posts = Blog::Post.published
 
     respond_to do |f|
@@ -54,6 +59,8 @@ class Blog::PostsController < ApplicationController
     else
       Blog::Post.published.find(params[:id])
     end
+
+    @content_for_title = "#{@post.title} - Blog de ifeel maps"
 
     if ComfyBlog.config.public_cms_layout
       render :cms_layout => ComfyBlog.config.public_cms_layout
