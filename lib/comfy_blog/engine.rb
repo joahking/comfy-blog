@@ -8,7 +8,7 @@ module ComfyBlog
         # Applying configuraion
         ComfyBlog.configure do |conf|
           conf.admin_route_prefix = "cms-admin" # ComfortableMexicanSofa.config.admin_route_prefix
-          conf.admin_controller = 'CmsAdmin::BaseController'
+          conf.admin_controller = 'Admin::Cms::BaseController'
           conf.form_builder = 'ComfortableMexicanSofa::FormBuilder'
         end
         # Adding view hooks

@@ -30,7 +30,7 @@
 
 <% if defined?(ComfortableMexicanSofa) %>
   <% content_for :right_column do %>
-    <%= render :partial => 'cms_admin/files/index' %>
+    <%= render :partial => 'cms/admin/files/index' %>
   <% end %>
   
   <%= cms_hook :blog_post, :locals => { :form => form } %>
