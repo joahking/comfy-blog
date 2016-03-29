@@ -24,12 +24,12 @@ module ComfyBlog::Routing
     Rails.application.routes.draw do
       scope ComfyBlog.config.public_route_prefix, :module => :blog do
         get '/'                   => 'posts#index', :as => :blog_posts
-        get 'tag/:tag'            => 'posts#index', :as => :tagged_blog_posts
-        get 'category/:category'  => 'posts#index', :as => :categorized_blog_posts
+        get 'tag/:tag'            => 'posts#list', :as => :tagged_blog_posts
+        get 'category/:category'  => 'posts#list', :as => :categorized_blog_posts
 
         with_options :constraints => { :year => /\d{4}/, :month => /\d{1,2}/ } do |o|
-          o.get ':year'               => 'posts#index', :as => :year_blog_posts
-          o.get ':year/:month'        => 'posts#index', :as => :month_blog_posts
+          o.get ':year'               => 'posts#index', :as => :year_blog_posts #TODO move to list
+          o.get ':year/:month'        => 'posts#index', :as => :month_blog_posts #TODO move to list
           o.get ':year/:month/:slug'  => 'posts#show',  :as => :dated_blog_post
         end
 
